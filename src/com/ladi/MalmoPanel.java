@@ -32,7 +32,7 @@ import static java.awt.Color.RED;
 
 public class MalmoPanel extends JPanel {
     //the depth the algorithm will use when calculating:
-    public static int algDepth=12;
+    public static int algDepth=9;
 
     //store remaining placeable and overall pieces for both players:
     public int remainingPlaceablePiecesForPlayer1 =9;
@@ -380,6 +380,7 @@ public class MalmoPanel extends JPanel {
         }
         return possibleBoardStatesList;
     }
+
     //gives the possible moves in a list from the boardState in regard to the relevant side:
     public ArrayList<StringBuilder> possibleMoves(StringBuilder boardState, int side){
 
@@ -508,12 +509,12 @@ public class MalmoPanel extends JPanel {
     }
 
     //advance the turn, if player one moved then player two's turn:
-    private int playerOnTurn() {if (player1onMove) return 1; else return 2;}
+    private int playerOnTurn() {return(player1onMove)?1:2;}
 
     //advance the turn, similar to playerOnTurn() if player one moved then player two's turn:
     private void nextPlayerOnTurn() {player1onMove = !player1onMove;}
 
-    //make the move:
+    //make the move:(currently no real function)
     public StringBuilder makeMove(ArrayList<StringBuilder> boardStateList, StringBuilder boardState){
         return boardState;
     }
